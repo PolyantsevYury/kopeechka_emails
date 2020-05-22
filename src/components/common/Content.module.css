@@ -1,0 +1,40 @@
+.error {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    font-size: 18px;
+    margin: 60px 20px 0 20px;
+    text-align: center;
+}
+
+.rightBlock {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.attention {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 50px 20px 0 20px;
+    text-align: center;
+}
+
+.recommendation {
+    font-size: 16px;
+    margin: 50px 20px 0 20px;
+    text-align: center;
+}
+
+.forBalanceContainer {
+}
+
+.uploadForm {
+    margin: 40px auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}

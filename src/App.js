@@ -16,12 +16,15 @@ import s from "./components/common/Content.module.css";
 import {Redirect} from "react-router-dom";
 
 class App extends Component {
-    componentDidMount() {
 
-        if ((localStorage.getItem('token')) === "undefined" || !!this.props.match.params.token) {
-            let token = this.props.match.params.token;
+    componentDidMount() {
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search.substring(1));
+        let foundToken = searchParams.get('token');
+
+        if (foundToken) {
+            let token = foundToken;
             localStorage.setItem('token', token);
-            // '6c468e5bd68eaff033b87648cedde73a'
             this.props.initializeApp(token);
         } else {
             let token = localStorage.getItem('token');
@@ -75,12 +78,7 @@ let AppContainer = compose(
 const EmailApp = (props) => {
     return <BrowserRouter>
         <Provider store={store}>
-            <Switch>
-                <Route exact path='/token=:token?'
-                       render={() => <AppContainer/>}/>
-                <Route path='*'
-                       render={() => <AppContainer/>}/>
-            </Switch>
+                <AppContainer/>
         </Provider>
     </BrowserRouter>
 }

@@ -54,7 +54,7 @@ class UploadForm extends React.Component {
                     </Form.Item>
                 </Form.Item>
 
-                <Form.Item name='file' getValueFromEvent={this.normFile}>
+                <Form.Item rules={[{ required: true, message: 'Пожалуйста загрузите файл!' }]} name='file' getValueFromEvent={this.normFile}>
                     <Upload name="file" onChange = {this.handleChange} customRequest={this.dummyRequest} fileList={this.state.fileList} listType="picture">
                         <Button>
                             <UploadOutlined/> Загрузить файл

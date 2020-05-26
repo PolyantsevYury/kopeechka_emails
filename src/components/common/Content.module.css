@@ -32,9 +32,14 @@
 .forBalanceContainer {
 }
 
-.uploadForm {
+.uploadContainer {
     margin: 40px auto;
-    font-size: 20px;
-    font-weight: bold;
+    width: 500px;
     text-align: center;
+}
+
+@media (max-width: 767px) {
+    .uploadContainer {
+        width: 300px;
+    }
 }

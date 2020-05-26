@@ -1,14 +1,3 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.form_upload {
-
-}
-
 .form_button {
     margin: 30px;
     font-size: 20px;
@@ -23,15 +12,6 @@
 .disabled {
     background-color: gray;
 }
-
-/*
-.disabled:hover {
-    background-color: gray;
-}
-
-.form_button:hover {
-    background-color: #2386c8;
-}*/
 
 .form_button:focus {
     outline: none;

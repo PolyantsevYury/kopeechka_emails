@@ -1,4 +1,3 @@
-import React from "react";
 import ForBalance from "./ForBalance";
 import {connect} from "react-redux";
 

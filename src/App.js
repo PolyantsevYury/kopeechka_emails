@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
+import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 import Preloader from "./components/common/Preloader/Preloader";
 import {compose} from "redux";
 import {connect, Provider} from "react-redux";
@@ -10,7 +10,7 @@ import {initializeApp} from "./redux/app-reducer";
 import Navbar from "./components/Navbar/Navbar";
 import ForBalanceContainer from "./components/ForBalance/ForBalanceContainer";
 import ForPercentContainer from "./components/ForPercent/ForPercentContainer";
-import TarifTableContainer from "./components/ForBalance/TarifTableContainer";
+import TarifTableContainer from "./components/ForBalance/TarifTable/TarifTableContainer";
 
 import s from "./components/common/Content.module.css";
 import {Redirect} from "react-router-dom";
@@ -76,11 +76,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const EmailApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter>
         <Provider store={store}>
-                <AppContainer/>
+            <AppContainer/>
         </Provider>
-    </BrowserRouter>
-}
+    </HashRouter>
+};
 
 export default EmailApp;

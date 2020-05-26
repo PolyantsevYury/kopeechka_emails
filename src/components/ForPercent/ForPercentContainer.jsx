@@ -1,4 +1,3 @@
-import React from "react";
 import ForPercent from "./ForPercent";
 import {connect} from "react-redux";
 

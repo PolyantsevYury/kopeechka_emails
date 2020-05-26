@@ -1,7 +1,7 @@
 import React from "react";
 import s from '../common/Content.module.css'
-import StatusTableContainer from "../ForBalance/StatusTableContainer";
-import UploadContainer from "../UploadForm/UploadContainer";
+import StatusTableContainer from "../StatusTable/StatusTableContainer";
+import UploadEmailsAnt from "../UploadForm/UploadForm";
 
 const ForPercent = (props) => {
     return (
@@ -17,13 +17,13 @@ const ForPercent = (props) => {
             </div>
             <StatusTableContainer/>
             <div className={s.recommendation}>
-                При заливе необходимо указать, на каком сайт были
+                При заливе необходимо указать, на каком сайте были
                 использованы эти почты, дабы мы исключили его выдачи.<br/>
                 Это поможет нам предоставлять более качественный сервис и вам
                 не потерять свои аккаунты и сохранить конфиденциальность данных.
             </div>
-            <div className={s.uploadForm}>
-                <UploadContainer />
+            <div className={s.uploadContainer}>
+                <UploadEmailsAnt />
             </div>
         </div>
     )

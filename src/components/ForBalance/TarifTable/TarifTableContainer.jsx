@@ -1,7 +1,7 @@
 import React from "react";
 import TarifTable from "./TarifTable";
 import {connect} from "react-redux";
-import {requestTarifData} from "../../redux/table-reducer";
+import {requestTarifData} from "../../../redux/table-reducer";
 
 class TarifTableContainer extends React.Component {
     componentDidMount() {

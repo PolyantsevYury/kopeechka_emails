@@ -8,6 +8,8 @@ const StatusTable = (status) => {
         {
             title: 'Дата залива',
             dataIndex: 'uploadDate',
+            sorter: (a, b) => a.key - b.key,
+            defaultSortOrder: 'descend',
         },
         {
             title: 'Дата проверки',
@@ -18,9 +20,8 @@ const StatusTable = (status) => {
             children: [
                 {
                     title: 'Загружено',
-                    dataIndex: 'uploadedAccounts'
+                    dataIndex: 'uploadedAccounts',
                 },
-
                 {
                     title: 'Активные',
                     dataIndex: 'activeAccounts'

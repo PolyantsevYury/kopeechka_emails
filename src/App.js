@@ -46,6 +46,7 @@ class App extends Component {
                 <Navbar/>
                 <div>
                     <Switch>
+
                         <Route path='/forbalance'
                                render={() =>
                                    <div className='for-balance-content'>

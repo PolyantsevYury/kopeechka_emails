@@ -36,9 +36,9 @@ export const requestTarifData = (token) => {
     }
 };
 
-export const requestStatusData = (token) => {
+export const requestStatusData = (token, type) => {
     return async (dispatch) => {
-        let data = await tableAPI.getStatusData(token);
+        let data = await tableAPI.getStatusData(token, type);
         let statusData = data.data;
         dispatch(setStatusData(statusData))
     }

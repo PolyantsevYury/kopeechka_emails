@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Button, Upload, Input, Alert} from 'antd';
+import {Form, Button, Upload, Input, Alert, message} from 'antd';
 import {UploadOutlined} from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import {uploadFile} from "../../redux/upload-reducer";
@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 class UploadForm extends React.Component {
 
     state = {
-        fileList: []
+        fileList: [],
     };
 
     normFile = e => {
@@ -23,7 +23,10 @@ class UploadForm extends React.Component {
 
     onFinish = values => {
         let token = localStorage.getItem('token');
-        this.props.uploadFile(values.comment, token, values.file[0].originFileObj)
+        this.props.uploadFile(values.comment, this.props.type, token, values.file[0].originFileObj);
+        this.setState({
+            fileList: [],
+        });
     };
 
     dummyRequest({ file, onSuccess }) {
@@ -39,7 +42,6 @@ class UploadForm extends React.Component {
 
         this.setState({ fileList });
     };
-
 
     render() {
         return (
@@ -68,7 +70,7 @@ class UploadForm extends React.Component {
                         offset: 6,
                     }}
                 >
-                    <Button type="primary" htmlType="submit">
+                    <Button disabled={this.state.fileList.length === 0} type="primary" htmlType="submit">
                         Отправить
                     </Button>
                 </Form.Item>

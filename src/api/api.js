@@ -15,8 +15,8 @@ export const tableAPI = {
         return instance.get('mailbox-zones?popular=1&token=' + token)
     },
 
-    getStatusData(token) {
-        return instance.get('mailbox-uploaded-table?token=' + token + '&type=1')
+    getStatusData(token, type) {
+        return instance.get('mailbox-uploaded-table?token=' + token + '&type=' + type)
     }
 };
 

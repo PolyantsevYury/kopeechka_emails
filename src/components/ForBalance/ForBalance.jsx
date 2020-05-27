@@ -1,7 +1,7 @@
 import React from 'react';
 import s from '../common/Content.module.css';
 import StatusTableContainer from "../StatusTable/StatusTableContainer";
-import UploadEmailsAnt from "../UploadForm/UploadForm";
+import UploadForm from "../UploadForm/UploadForm";
 
 const ForBalance = () => {
     return (
@@ -12,7 +12,7 @@ const ForBalance = () => {
                     Пароли будут сменены!
                     Залив происходит в течении 24 часов.
                 </div>
-                <StatusTableContainer/>
+                <StatusTableContainer type={0}/>
                 <div className={s.recommendation}>
                     При заливе необходимо указать, на каком сайте были
                     использованы эти почты, дабы мы исключили его выдачи. <br/>
@@ -20,7 +20,7 @@ const ForBalance = () => {
                     не потерять свои аккаунты и сохранить конфиденциальность данных.
                 </div>
                 <div className={s.uploadContainer}>
-                    <UploadEmailsAnt />
+                    <UploadForm type={0}/>
                 </div>
             </div>
     )

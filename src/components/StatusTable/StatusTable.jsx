@@ -47,6 +47,8 @@ const StatusTable = (status) => {
     ];
 
     function timeConverter(UNIX_timestamp){
+        if (!UNIX_timestamp) return null;
+
         let a = new Date(UNIX_timestamp * 1000);
         let months = ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
         let year = a.getFullYear();
@@ -81,7 +83,7 @@ const StatusTable = (status) => {
             data.push({
                 key: i,
                 uploadDate: timeConverter(statusData[i].date_upload),
-                checkDate: statusData[i].date_check,
+                checkDate: timeConverter(statusData[i].date_check),
                 uploadedAccounts: statusData[i].count,
                 activeAccounts: statusData[i].alive,
                 yourComment: statusData[i].comment_user,

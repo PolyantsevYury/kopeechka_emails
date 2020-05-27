@@ -6,7 +6,8 @@ import {requestStatusData} from "../../redux/table-reducer";
 class StatusTableContainer extends React.Component {
     componentDidMount() {
         let token = localStorage.getItem('token');
-        this.props.requestStatusData(token);
+        let type = this.props.type;
+        this.props.requestStatusData(token, type);
     }
 
     render() {

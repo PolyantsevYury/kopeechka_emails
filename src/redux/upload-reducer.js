@@ -29,10 +29,10 @@ const uploadReducer = (state = initialState, action) => {
 export const savePhotoSuccess = (isSuccess) => ({type: UPLOAD_FILE_SUCCESS, payload: {isSuccess}});
 export const toggleUploadingProgress = (uploadingInProgress) => ({type: TOGGLE_IS_UPLOADING_PROGRESS, payload: {uploadingInProgress}});
 
-export const uploadFile = (comment, token, emails_file) => async (dispatch) => {
+export const uploadFile = (comment, type, token, emails_file) => async (dispatch) => {
     dispatch(toggleUploadingProgress(true));
 
-    let response = await uploadAPI.uploadFile(comment, 1, token, emails_file);
+    let response = await uploadAPI.uploadFile(comment, type, token, emails_file);
 
     if (response.data.status === "OK") {
         dispatch(savePhotoSuccess(true));
